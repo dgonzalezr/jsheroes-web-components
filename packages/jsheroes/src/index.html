@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <link rel="stylesheet" href="/build/jsheroes.css" />
+    <script type="module" src="/build/jsheroes.esm.js"></script>
+    <script nomodule src="/build/jsheroes.js"></script>
+  </head>
+
+  <body>
+    <jsh-welcome day-start="18" day-end="19th" month="May" year="2023" city="Cluj-Napoca, Romania"></jsh-welcome>
+    <div style="max-width: 20rem; margin: auto; margin-top: 2rem">
+      <jsh-currency-field value="99.99" currency="usd"></jsh-currency-field>
+    </div>
+
+    <script>
+      const currencyField = document.querySelector('jsh-currency-field');
+      currencyField.addEventListener('jshChange', (ev) => {
+        console.log('Currency value changed', ev.detail);
+      });
+    </script>
+  </body>
+</html>

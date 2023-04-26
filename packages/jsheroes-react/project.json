@@ -1,0 +1,30 @@
+{
+  "name": "jsheroes-react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/jsheroes-react/src",
+  "projectType": "library",
+  "implicitDependencies": ["jsheroes"],
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/jsheroes-react",
+        "tsConfig": "packages/jsheroes-react/tsconfig.lib.json",
+        "project": "packages/jsheroes-react/package.json",
+        "entryFile": "packages/jsheroes-react/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/jsheroes-react/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    }
+  }
+}

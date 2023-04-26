@@ -1,0 +1,34 @@
+{
+  "name": "jsheroes-angular",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/jsheroes-angular/src",
+  "prefix": "bee-q",
+  "implicitDependencies": ["jsheroes"],
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": [" dist/packages/jsheroes-angular"],
+      "options": {
+        "project": "packages/jsheroes-angular/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/jsheroes-angular/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/jsheroes-angular/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/jsheroes-angular/**/*.ts", "packages/jsheroes-angular/**/*.html"]
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "jsheroes",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/jsheroes/src",
+  "projectType": "library",
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "scss"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/jsheroes/tsconfig.lib.json",
+        "configPath": "packages/jsheroes/stencil.config.ts",
+        "outputPath": "dist/packages/jsheroes"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/jsheroes/tsconfig.lib.json",
+        "configPath": "packages/jsheroes/stencil.config.ts",
+        "outputPath": "dist/packages/jsheroes"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "start": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/jsheroes/tsconfig.lib.json",
+        "configPath": "packages/jsheroes/stencil.config.ts",
+        "outputPath": "dist/packages/jsheroes"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "packages/jsheroes/tsconfig.lib.json",
+        "configPath": "packages/jsheroes/stencil.config.ts",
+        "outputPath": "dist/packages/jsheroes"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": "packages/jsheroes/**/*.{ts,tsx}"
+      }
+    }
+  }
+}
